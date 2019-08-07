@@ -1,6 +1,12 @@
 import React from 'react'
-import AppContainer from './nav/app-container'
+import AppContainer from './nav/AppContainer'
+import {init} from './helpers/appConfig'
 
-export default function App() {
-	return <AppContainer />
+export default class App extends React.Component {
+  componentWillMount() {
+    init()
+  }
+  render() {
+    return <AppContainer />
+  }
 }
