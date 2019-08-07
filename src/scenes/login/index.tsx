@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavigationScreenProp } from 'react-navigation'
 import {
 	Container,
 	Header,
@@ -12,9 +13,12 @@ import {
 	Title
 } from 'native-base'
 
-export default class LoginScreen extends Component<{ navigation }> {
+interface Props {
+	navigation: NavigationScreenProp<any, any>
+}
+
+export default class LoginScreen extends Component<Props> {
 	navigate = () => {
-		console.log('me ejecuto')
 		this.props.navigation.navigate('signUp')
 	}
 	render() {
