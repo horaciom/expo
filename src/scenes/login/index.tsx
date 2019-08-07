@@ -1,22 +1,48 @@
-import React from 'react'
-import styles from './styles'
-import { View, Text, TouchableOpacity } from 'react-native'
+import React, { Component } from 'react'
+import {
+	Container,
+	Header,
+	Button,
+	Text,
+	Body,
+	Form,
+	Item as FormItem,
+	Input,
+	Label,
+	Title
+} from 'native-base'
 
-const LoginScreen = ({ navigation }) => {
-	const navigate = () => {
+export default class LoginScreen extends Component<{ navigation }> {
+	navigate = () => {
 		console.log('me ejecuto')
-		navigation.navigate('signUp')
+		this.props.navigation.navigate('signUp')
 	}
+	render() {
+		return (
+			<Container>
+				<Header>
+					<Body>
+						<Title>Login</Title>
+					</Body>
+				</Header>
+				<Form style={{ marginHorizontal: 16 }}>
+					<FormItem floatingLabel>
+						<Label>Email</Label>
+						<Input />
+					</FormItem>
+					<FormItem floatingLabel last>
+						<Label>Password</Label>
+						<Input secureTextEntry={true} />
+					</FormItem>
 
-	return (
-		<View style={styles.container}>
-			<Text>Login screen</Text>
-
-			<TouchableOpacity onPress={navigate}>
-				<Text>Sign Up</Text>
-			</TouchableOpacity>
-		</View>
-	)
+					<Button full success style={{ marginVertical: 8, marginTop: 24 }}>
+						<Text> Sign In </Text>
+					</Button>
+					<Button full bordered success onPress={this.navigate}>
+						<Text> Sign Up </Text>
+					</Button>
+				</Form>
+			</Container>
+		)
+	}
 }
-
-export default LoginScreen

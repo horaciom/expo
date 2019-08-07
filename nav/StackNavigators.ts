@@ -5,7 +5,7 @@ import Dashboard from '../src/scenes/Dashboard'
 
 const AuthNavigator = createStackNavigator(
 	{
-		login: {
+		signIn: {
 			screen: Login,
 			navigationOptions: {
 				header: null
@@ -14,12 +14,12 @@ const AuthNavigator = createStackNavigator(
 		signUp: {
 			screen: SignUp,
 			navigationOptions: {
-				title: 'Registration'
+				header: null
 			}
 		}
 	},
 	{
-		initialRouteName: 'login'
+		initialRouteName: 'signIn'
 	}
 )
 
