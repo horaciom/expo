@@ -48,16 +48,20 @@ export default class FormLogin extends Component<Props> {
 				</Header>
 				<Form style={{ marginHorizontal: 16 }}>
 					<InputGroup>
-						<Input
-							placeholder={'Email'}
-							keyboardType='email-address'
-							autoCapitalize='none'
-							value={values.email}
-							onChangeText={value => setFieldValue('email', value)}
-							onBlur={() => setFieldTouched('email')}
-							editable={!isSubmitting}
-						/>
+						<Item error={true}>
+							<Input
+								placeholder={'Email'}
+								keyboardType='email-address'
+								autoCapitalize='none'
+								value={values.email}
+								onChangeText={value => setFieldValue('email', value)}
+								onBlur={() => setFieldTouched('email')}
+								editable={!isSubmitting}
+							/>
+							{true ? <Icon name='close-circle' /> : null}
+						</Item>
 					</InputGroup>
+					{true ? <Text>Error</Text> : null}
 					<FormItem floatingLabel last>
 						<Input
 							secureTextEntry={true}
