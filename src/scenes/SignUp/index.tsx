@@ -33,7 +33,7 @@ export default class SignUp extends Component<Props> {
 			<Container>
 				<Header>
 					<Body>
-						<Title>SignUp</Title>
+						<Title>Sign Up</Title>
 					</Body>
 				</Header>
 				<Form style={{ marginHorizontal: 16 }}>

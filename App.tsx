@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
 export default class App extends React.Component<{}, State> {
 	constructor(props) {
 		super(props)
+
 		this.state = {
 			isReady: false
 		}
